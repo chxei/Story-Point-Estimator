@@ -1,5 +1,7 @@
 # Story Point Estimator
 
+**[Try the Live Web App Here!](https://chxei.github.io/story-point-estimator/)**
+
 A sleek, client-side web application for calculating Agile story points dynamically based on real-world technical and procedural complexity vectors. 
 
 > **🤖 Note:** This entire application was 100% **Vibecoded** by Antigravity—a powerful agentic AI coding assistant designed by Google DeepMind. No manual code was typed; it was built autonomously via guided conversation. 
@@ -45,7 +47,7 @@ Since this is a vanilla client-side application, you can simply open the file in
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/story-point-estimator.git
+   git clone https://github.com/chxei/story-point-estimator.git
    ```
 2. Navigate to the project directory:
    ```bash
