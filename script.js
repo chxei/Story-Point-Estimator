@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Elements
-    const techDiffSlider = document.getElementById("tech-diff");
-    const procDiffSlider = document.getElementById("proc-diff");
-    const techValDisplay = document.getElementById("tech-val");
-    const procValDisplay = document.getElementById("proc-val");
+    const techDiffRadios = document.getElementsByName("tech-diff");
+    const procDiffRadios = document.getElementsByName("proc-diff");
 
     const needsDeploymentCb = document.getElementById("needs-deployment");
     const dependentModulesCb = document.getElementById("dependent-modules");
@@ -21,10 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const MULTI_DEPENDENT = 1.15; // Low impact
     const ADD_DEPLOYMENT = 1; // Low impact
 
+    function getRadioValue(radios) {
+        for (const radio of radios) {
+            if (radio.checked) {
+                return parseInt(radio.value, 10);
+            }
+        }
+        return 5; // default fallback
+    }
+
     function calculateStoryPoints() {
-        // Base values
-        const techDiff = parseInt(techDiffSlider.value, 10);
-        const procDiff = parseInt(procDiffSlider.value, 10);
+        // Base values (2 = Easy, 5 = Medium, 8 = Hard)
+        const techDiff = getRadioValue(techDiffRadios);
+        const procDiff = getRadioValue(procDiffRadios);
 
         // Modifiers
         const needsDeployment = needsDeploymentCb.checked;
@@ -74,10 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateUI(points) {
-        // Update slider number display
-        techValDisplay.textContent = techDiffSlider.value;
-        procValDisplay.textContent = procDiffSlider.value;
-
         // Update Points with animation if changed
         if (resultPointsEl.innerText !== points.toString()) {
             resultPointsEl.classList.remove('pop');

@@ -19,18 +19,32 @@
                 <h2>Base Difficulty</h2>
                 
                 <div class="input-group">
-                    <label for="tech-diff">
-                        Technical Difficulty: <span id="tech-val" class="val-display">5</span>
-                    </label>
-                    <input type="range" id="tech-diff" class="slider" min="1" max="10" value="5">
+                    <label>Technical Difficulty</label>
+                    <div class="segmented-control">
+                        <input type="radio" id="tech-easy" name="tech-diff" value="2">
+                        <label for="tech-easy">Easy</label>
+                        
+                        <input type="radio" id="tech-medium" name="tech-diff" value="5" checked>
+                        <label for="tech-medium">Medium</label>
+                        
+                        <input type="radio" id="tech-hard" name="tech-diff" value="8">
+                        <label for="tech-hard">Hard</label>
+                    </div>
                     <p class="helper-text">Core technical complexity of the task.</p>
                 </div>
 
                 <div class="input-group">
-                    <label for="proc-diff">
-                        Procedural Difficulty: <span id="proc-val" class="val-display">5</span>
-                    </label>
-                    <input type="range" id="proc-diff" class="slider" min="1" max="10" value="5">
+                    <label>Procedural Difficulty</label>
+                    <div class="segmented-control">
+                        <input type="radio" id="proc-easy" name="proc-diff" value="2">
+                        <label for="proc-easy">Easy</label>
+                        
+                        <input type="radio" id="proc-medium" name="proc-diff" value="5" checked>
+                        <label for="proc-medium">Medium</label>
+                        
+                        <input type="radio" id="proc-hard" name="proc-diff" value="8">
+                        <label for="proc-hard">Hard</label>
+                    </div>
                     <p class="helper-text">Organizational and procedural complexity.</p>
                 </div>
             </section>
