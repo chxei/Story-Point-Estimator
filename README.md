@@ -1,6 +1,6 @@
 # Story Point Estimator
 
-**[Try the Live Web App Here!](https://chxei.github.io/story-point-estimator/)**
+**[Try the Live Web App Here!](https://chxei.github.io/Story-Point-Estimator/)**
 
 A sleek, client-side web application for calculating Agile story points dynamically based on real-world technical and procedural complexity vectors. 
 
@@ -47,11 +47,11 @@ Since this is a vanilla client-side application, you can simply open the file in
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/chxei/story-point-estimator.git
+   git clone https://github.com/chxei/Story-Point-Estimator.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd story-point-estimator
+   cd Story-Point-Estimator
    ```
 3. Open `index.html` in your favorite web browser.
 
