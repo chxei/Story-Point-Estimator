@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function calculateStoryPoints() {
-        // Base values (2 = Easy, 5 = Medium, 8 = Hard)
+        // Base values (2 = Easy, 5 = Medium, 10 = Hard)
         const techDiff = getRadioValue(techDiffRadios);
         const procDiff = getRadioValue(procDiffRadios);
 
