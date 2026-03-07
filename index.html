@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Point Estimator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-container">
+        <header>
+            <h1>Story Point Estimator</h1>
+            <p class="subtitle">Calculate complexity based on technical and procedural vectors.</p>
+        </header>
+
+        <form id="estimator-form">
+            <section class="card base-difficulty">
+                <h2>Base Difficulty</h2>
+                
+                <div class="input-group">
+                    <label for="tech-diff">
+                        Technical Difficulty: <span id="tech-val" class="val-display">5</span>
+                    </label>
+                    <input type="range" id="tech-diff" class="slider" min="1" max="10" value="5">
+                    <p class="helper-text">Core technical complexity of the task.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="proc-diff">
+                        Procedural Difficulty: <span id="proc-val" class="val-display">5</span>
+                    </label>
+                    <input type="range" id="proc-diff" class="slider" min="1" max="10" value="5">
+                    <p class="helper-text">Organizational and procedural complexity.</p>
+                </div>
+            </section>
+
+            <section class="card variables">
+                <h2>Variables that Increase Difficulty</h2>
+                
+                <label class="checkbox-container">
+                    <input type="checkbox" id="needs-deployment">
+                    <span class="checkmark"></span>
+                    <div class="label-text">
+                        <strong>Needs Deployment</strong>
+                        <span>Adds to overall difficulty (Low Impact)</span>
+                    </div>
+                </label>
+
+                <label class="checkbox-container">
+                    <input type="checkbox" id="dependent-modules">
+                    <span class="checkmark"></span>
+                    <div class="label-text">
+                        <strong>Is dependent on other modules</strong>
+                        <span>Multiplies base difficulty (Low Impact)</span>
+                    </div>
+                </label>
+
+                <label class="checkbox-container">
+                    <input type="checkbox" id="needs-tests">
+                    <span class="checkmark"></span>
+                    <div class="label-text">
+                        <strong>Needs Tests</strong>
+                        <span>Multiplies technical difficulty (Low Impact)</span>
+                    </div>
+                </label>
+
+                <label class="checkbox-container">
+                    <input type="checkbox" id="multiple-tech">
+                    <span class="checkmark"></span>
+                    <div class="label-text">
+                        <strong>Needs knowledge of several technical domains</strong>
+                        <span>Multiplies technical difficulty (Medium Impact)</span>
+                    </div>
+                </label>
+
+                <label class="checkbox-container">
+                    <input type="checkbox" id="multiple-bus">
+                    <span class="checkmark"></span>
+                    <div class="label-text">
+                        <strong>Needs knowledge of several business domains</strong>
+                        <span>Multiplies procedural difficulty (High Impact)</span>
+                    </div>
+                </label>
+            </section>
+        </form>
+
+        <div class="result-container">
+            <h2>Estimated Story Points</h2>
+            <div class="points-wrapper">
+                <span id="result-points" class="points-value">3</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
