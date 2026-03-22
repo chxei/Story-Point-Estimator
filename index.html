@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +8,81 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <main class="app-container">
         <header style="position: relative;">
             <h1>Story Point Estimator</h1>
             <p class="subtitle">Calculate complexity based on technical and procedural vectors.</p>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
             </button>
         </header>
 
         <form id="estimator-form">
             <section class="card base-difficulty">
                 <h2>Base Difficulty</h2>
-                
+
                 <div class="input-group">
-                    <label>Technical Difficulty <span class="helper-text">— Core technical complexity of the task.</span></label>
+                    <div class="label-row">
+                        <label>Technical Difficulty <span class="helper-text">— Technical complexity.</span></label>
+                        <div class="tooltip">
+                            <span class="tooltip-icon">?</span>
+                            <div class="tooltip-content">
+                                Medium example: adding a new feature, modifying an existing feature.
+                                <br> <br>Hard example: architectural changes, complex algorithms.
+                            </div>
+                        </div>
+                    </div>
                     <div class="segmented-control">
                         <input type="radio" id="tech-easy" name="tech-diff" value="2" checked>
                         <label for="tech-easy">Easy</label>
-                        
+
                         <input type="radio" id="tech-medium" name="tech-diff" value="5">
                         <label for="tech-medium">Medium</label>
-                        
+
                         <input type="radio" id="tech-hard" name="tech-diff" value="10">
                         <label for="tech-hard">Hard</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Procedural Difficulty <span class="helper-text">— Organizational and procedural complexity.</span></label>
+                    <div class="label-row">
+                        <label>Procedural Difficulty <span class="helper-text">— Organizational
+                                complexity.</span></label>
+                        <div class="tooltip">
+                            <span class="tooltip-icon">?</span>
+                            <div class="tooltip-content">
+                                Medium example: changes in a process which is part of the large process, but in squads
+                                ownership.
+                                <br> <br>Hard example: changes/implementations of a large process, whichs scope may
+                                exceed
+                                our squad.
+                            </div>
+                        </div>
+                    </div>
                     <div class="segmented-control">
                         <input type="radio" id="proc-easy" name="proc-diff" value="2" checked>
                         <label for="proc-easy">Easy</label>
-                        
+
                         <input type="radio" id="proc-medium" name="proc-diff" value="5">
                         <label for="proc-medium">Medium</label>
-                        
+
                         <input type="radio" id="proc-hard" name="proc-diff" value="10">
                         <label for="proc-hard">Hard</label>
                     </div>
@@ -53,78 +91,119 @@
 
             <section class="card variables">
                 <h2>Variables that Increase Difficulty</h2>
-                
+
                 <div class="input-group">
-                    <label>Deployment Complexity <span class="helper-text">— Adds to overall difficulty.</span></label>
+                    <div class="label-row">
+                        <label>Deployment Complexity <span class="helper-text">— Adds to overall
+                                difficulty.</span></label>
+                        <div class="tooltip">
+                            <span class="tooltip-icon">?</span>
+                            <div class="tooltip-content">How difficult is it to get this code into production? Hard
+                                means manual interventions, database migrations, or coordinated multi-system
+                                deployments.</div>
+                        </div>
+                    </div>
                     <div class="segmented-control">
                         <input type="radio" id="dep-easy" name="needs-deployment" value="0" checked>
                         <label for="dep-easy">Easy</label>
-                        
+
                         <input type="radio" id="dep-medium" name="needs-deployment" value="1">
                         <label for="dep-medium">Medium</label>
-                        
+
                         <input type="radio" id="dep-hard" name="needs-deployment" value="2">
                         <label for="dep-hard">Hard</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Testing Requirements <span class="helper-text">— Multiplies technical difficulty.</span></label>
+                    <div class="label-row">
+                        <label>Testing Requirements <span class="helper-text">— Multiplies technical
+                                difficulty.</span></label>
+                        <div class="tooltip">
+                            <span class="tooltip-icon">?</span>
+                            <div class="tooltip-content">The effort required to verify constraints. Hard means extensive
+                                integration tests, end-to-end testing, or heavy manual QA coordination.</div>
+                        </div>
+                    </div>
                     <div class="segmented-control">
                         <input type="radio" id="test-easy" name="needs-tests" value="1.0" checked>
                         <label for="test-easy">Easy</label>
-                        
+
                         <input type="radio" id="test-medium" name="needs-tests" value="1.15">
                         <label for="test-medium">Medium</label>
-                        
+
                         <input type="radio" id="test-hard" name="needs-tests" value="1.30">
                         <label for="test-hard">Hard</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Module Dependencies <span class="helper-text">— Multiplies base difficulty.</span></label>
+                    <div class="label-row">
+                        <label>Module Dependencies <span class="helper-text">— Multiplies base
+                                difficulty.</span></label>
+                        <div class="tooltip">
+                            <span class="tooltip-icon">?</span>
+                            <div class="tooltip-content">How much does this task rely on or impact other parts of the
+                                system? Hard means changes cascade across multiple systems or teams.</div>
+                        </div>
+                    </div>
                     <div class="segmented-control">
                         <input type="radio" id="mod-easy" name="dependent-modules" value="1.0" checked>
                         <label for="mod-easy">Easy</label>
-                        
+
                         <input type="radio" id="mod-medium" name="dependent-modules" value="1.15">
                         <label for="mod-medium">Medium</label>
-                        
+
                         <input type="radio" id="mod-hard" name="dependent-modules" value="1.30">
                         <label for="mod-hard">Hard</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Technical Domain Knowledge <span class="helper-text">— Multiplies technical difficulty.</span></label>
+                    <div class="label-row">
+                        <label>Technical Domain Knowledge <span class="helper-text">— Multiplies technical
+                                difficulty.</span></label>
+                        <div class="tooltip">
+                            <span class="tooltip-icon">?</span>
+                            <div class="tooltip-content">The specialization required to execute the work. Hard means it
+                                requires deep expertise in a specific obscure technology or legacy system.</div>
+                        </div>
+                    </div>
                     <div class="segmented-control">
                         <input type="radio" id="techdom-easy" name="multiple-tech" value="1.0" checked>
                         <label for="techdom-easy">Easy</label>
-                        
+
                         <input type="radio" id="techdom-medium" name="multiple-tech" value="1.30">
                         <label for="techdom-medium">Medium</label>
-                        
+
                         <input type="radio" id="techdom-hard" name="multiple-tech" value="1.60">
                         <label for="techdom-hard">Hard</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Business Domain Knowledge <span class="helper-text">— Multiplies procedural difficulty.</span></label>
+                    <div class="label-row">
+                        <label>Business Domain Knowledge <span class="helper-text">— Multiplies procedural
+                                difficulty.</span></label>
+                        <div class="tooltip">
+                            <span class="tooltip-icon">?</span>
+                            <div class="tooltip-content">The understanding of business rules required. Hard implies
+                                navigating complex, undocumented business logic or specific regulatory frameworks.</div>
+                        </div>
+                    </div>
                     <div class="segmented-control">
                         <input type="radio" id="busdom-easy" name="multiple-bus" value="1.0" checked>
                         <label for="busdom-easy">Easy</label>
-                        
+
                         <input type="radio" id="busdom-medium" name="multiple-bus" value="1.50">
                         <label for="busdom-medium">Medium</label>
-                        
+
                         <input type="radio" id="busdom-hard" name="multiple-bus" value="2.0">
                         <label for="busdom-hard">Hard</label>
                     </div>
                 </div>
             </section>
-            
+
             <div class="form-actions">
                 <button type="reset" class="reset-btn">Reset Defaults</button>
             </div>
@@ -141,4 +220,5 @@
     <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
