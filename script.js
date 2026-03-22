@@ -82,6 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Attach Event Listeners
     form.addEventListener("input", calculateStoryPoints);
     form.addEventListener("change", calculateStoryPoints);
+    form.addEventListener("reset", () => {
+        setTimeout(calculateStoryPoints, 0);
+    });
 
     // Initial Calculation
     calculateStoryPoints();

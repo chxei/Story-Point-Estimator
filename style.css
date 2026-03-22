@@ -334,6 +334,28 @@ body.dark-theme .sun-icon {
     animation: pop 0.2s ease-out;
 }
 
+.form-actions {
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.reset-btn {
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.reset-btn:hover {
+    background: var(--card-border);
+    color: var(--text-primary);
+}
+
 @media (max-width: 600px) {
     .app-container {
         padding: 1.5rem;
