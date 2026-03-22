@@ -340,6 +340,8 @@ body.dark-theme .sun-icon {
 }
 
 .reset-btn {
+    -webkit-appearance: none;
+    appearance: none;
     background: transparent;
     border: 1px solid var(--card-border);
     color: var(--text-secondary);
