@@ -5,5 +5,5 @@
 - **File Structure:** 
   - Keep all markup in `index.html`.
   - Keep all styles in `style.css`.
-  - Keep all interactivity and calculator logic in `script.js`.
+  - Separate JavaScript concerns into modular files (e.g., `script.js` for core interactivity/calculations, `theme.js` for UI state and `localStorage`).
 - **Code Style:** Use modern ES6+ features (const/let, arrow functions, DOMContentLoaded). Keep logic separated into clear, readable functions.
