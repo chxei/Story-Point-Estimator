@@ -19,7 +19,7 @@
                 <h2>Base Difficulty</h2>
                 
                 <div class="input-group">
-                    <label>Technical Difficulty</label>
+                    <label>Technical Difficulty <span class="helper-text">— Core technical complexity of the task.</span></label>
                     <div class="segmented-control">
                         <input type="radio" id="tech-easy" name="tech-diff" value="2" checked>
                         <label for="tech-easy">Easy</label>
@@ -30,11 +30,10 @@
                         <input type="radio" id="tech-hard" name="tech-diff" value="10">
                         <label for="tech-hard">Hard</label>
                     </div>
-                    <p class="helper-text">Core technical complexity of the task.</p>
                 </div>
 
                 <div class="input-group">
-                    <label>Procedural Difficulty</label>
+                    <label>Procedural Difficulty <span class="helper-text">— Organizational and procedural complexity.</span></label>
                     <div class="segmented-control">
                         <input type="radio" id="proc-easy" name="proc-diff" value="2" checked>
                         <label for="proc-easy">Easy</label>
@@ -45,7 +44,6 @@
                         <input type="radio" id="proc-hard" name="proc-diff" value="10">
                         <label for="proc-hard">Hard</label>
                     </div>
-                    <p class="helper-text">Organizational and procedural complexity.</p>
                 </div>
             </section>
 
@@ -53,7 +51,7 @@
                 <h2>Variables that Increase Difficulty</h2>
                 
                 <div class="input-group">
-                    <label>Needs Deployment</label>
+                    <label>Deployment Complexity <span class="helper-text">— Adds to overall difficulty.</span></label>
                     <div class="segmented-control">
                         <input type="radio" id="dep-easy" name="needs-deployment" value="0" checked>
                         <label for="dep-easy">Easy</label>
@@ -64,11 +62,10 @@
                         <input type="radio" id="dep-hard" name="needs-deployment" value="2">
                         <label for="dep-hard">Hard</label>
                     </div>
-                    <p class="helper-text">Adds to overall difficulty.</p>
                 </div>
 
                 <div class="input-group">
-                    <label>Is dependent on other modules</label>
+                    <label>Module Dependencies <span class="helper-text">— Multiplies base difficulty.</span></label>
                     <div class="segmented-control">
                         <input type="radio" id="mod-easy" name="dependent-modules" value="1.0" checked>
                         <label for="mod-easy">Easy</label>
@@ -79,11 +76,10 @@
                         <input type="radio" id="mod-hard" name="dependent-modules" value="1.30">
                         <label for="mod-hard">Hard</label>
                     </div>
-                    <p class="helper-text">Multiplies base difficulty.</p>
                 </div>
 
                 <div class="input-group">
-                    <label>Needs Tests</label>
+                    <label>Testing Requirements <span class="helper-text">— Multiplies technical difficulty.</span></label>
                     <div class="segmented-control">
                         <input type="radio" id="test-easy" name="needs-tests" value="1.0" checked>
                         <label for="test-easy">Easy</label>
@@ -94,11 +90,10 @@
                         <input type="radio" id="test-hard" name="needs-tests" value="1.30">
                         <label for="test-hard">Hard</label>
                     </div>
-                    <p class="helper-text">Multiplies technical difficulty.</p>
                 </div>
 
                 <div class="input-group">
-                    <label>Needs knowledge of several technical domains</label>
+                    <label>Technical Domain Knowledge <span class="helper-text">— Multiplies technical difficulty.</span></label>
                     <div class="segmented-control">
                         <input type="radio" id="techdom-easy" name="multiple-tech" value="1.0" checked>
                         <label for="techdom-easy">Easy</label>
@@ -109,11 +104,10 @@
                         <input type="radio" id="techdom-hard" name="multiple-tech" value="1.60">
                         <label for="techdom-hard">Hard</label>
                     </div>
-                    <p class="helper-text">Multiplies technical difficulty.</p>
                 </div>
 
                 <div class="input-group">
-                    <label>Needs knowledge of several business domains</label>
+                    <label>Business Domain Knowledge <span class="helper-text">— Multiplies procedural difficulty.</span></label>
                     <div class="segmented-control">
                         <input type="radio" id="busdom-easy" name="multiple-bus" value="1.0" checked>
                         <label for="busdom-easy">Easy</label>
@@ -124,7 +118,6 @@
                         <input type="radio" id="busdom-hard" name="multiple-bus" value="2.0">
                         <label for="busdom-hard">Hard</label>
                     </div>
-                    <p class="helper-text">Multiplies procedural difficulty.</p>
                 </div>
             </section>
         </form>
