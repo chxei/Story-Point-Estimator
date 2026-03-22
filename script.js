@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const procDiffRadios = document.getElementsByName("proc-diff");
 
     const needsDeploymentRadios = document.getElementsByName("needs-deployment");
-    const dependentModulesRadios = document.getElementsByName("dependent-modules");
     const needsTestsRadios = document.getElementsByName("needs-tests");
+    const dependentModulesRadios = document.getElementsByName("dependent-modules");
     const multipleTechRadios = document.getElementsByName("multiple-tech");
     const multipleBusRadios = document.getElementsByName("multiple-bus");
 
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Modifiers
         const needsDeployment = getRadioValue(needsDeploymentRadios, 0);
-        const dependentModules = getRadioValue(dependentModulesRadios, 1.0);
         const needsTests = getRadioValue(needsTestsRadios, 1.0);
+        const dependentModules = getRadioValue(dependentModulesRadios, 1.0);
         const multipleTech = getRadioValue(multipleTechRadios, 1.0);
         const multipleBus = getRadioValue(multipleBusRadios, 1.0);
 
