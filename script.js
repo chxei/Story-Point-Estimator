@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return parseInt(radio.value, 10);
             }
         }
-        return 5; // default fallback
+        return 2; // default fallback
     }
 
     function calculateStoryPoints() {
