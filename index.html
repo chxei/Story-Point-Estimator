@@ -52,50 +52,80 @@
             <section class="card variables">
                 <h2>Variables that Increase Difficulty</h2>
                 
-                <label class="checkbox-container">
-                    <input type="checkbox" id="needs-deployment">
-                    <span class="checkmark"></span>
-                    <div class="label-text">
-                        <strong>Needs Deployment</strong>
-                        <span>Adds to overall difficulty (Low Impact)</span>
+                <div class="input-group">
+                    <label>Needs Deployment</label>
+                    <div class="segmented-control">
+                        <input type="radio" id="dep-easy" name="needs-deployment" value="0" checked>
+                        <label for="dep-easy">Easy</label>
+                        
+                        <input type="radio" id="dep-medium" name="needs-deployment" value="1">
+                        <label for="dep-medium">Medium</label>
+                        
+                        <input type="radio" id="dep-hard" name="needs-deployment" value="2">
+                        <label for="dep-hard">Hard</label>
                     </div>
-                </label>
+                    <p class="helper-text">Adds to overall difficulty.</p>
+                </div>
 
-                <label class="checkbox-container">
-                    <input type="checkbox" id="dependent-modules">
-                    <span class="checkmark"></span>
-                    <div class="label-text">
-                        <strong>Is dependent on other modules</strong>
-                        <span>Multiplies base difficulty (Low Impact)</span>
+                <div class="input-group">
+                    <label>Is dependent on other modules</label>
+                    <div class="segmented-control">
+                        <input type="radio" id="mod-easy" name="dependent-modules" value="1.0" checked>
+                        <label for="mod-easy">Easy</label>
+                        
+                        <input type="radio" id="mod-medium" name="dependent-modules" value="1.15">
+                        <label for="mod-medium">Medium</label>
+                        
+                        <input type="radio" id="mod-hard" name="dependent-modules" value="1.30">
+                        <label for="mod-hard">Hard</label>
                     </div>
-                </label>
+                    <p class="helper-text">Multiplies base difficulty.</p>
+                </div>
 
-                <label class="checkbox-container">
-                    <input type="checkbox" id="needs-tests">
-                    <span class="checkmark"></span>
-                    <div class="label-text">
-                        <strong>Needs Tests</strong>
-                        <span>Multiplies technical difficulty (Low Impact)</span>
+                <div class="input-group">
+                    <label>Needs Tests</label>
+                    <div class="segmented-control">
+                        <input type="radio" id="test-easy" name="needs-tests" value="1.0" checked>
+                        <label for="test-easy">Easy</label>
+                        
+                        <input type="radio" id="test-medium" name="needs-tests" value="1.15">
+                        <label for="test-medium">Medium</label>
+                        
+                        <input type="radio" id="test-hard" name="needs-tests" value="1.30">
+                        <label for="test-hard">Hard</label>
                     </div>
-                </label>
+                    <p class="helper-text">Multiplies technical difficulty.</p>
+                </div>
 
-                <label class="checkbox-container">
-                    <input type="checkbox" id="multiple-tech">
-                    <span class="checkmark"></span>
-                    <div class="label-text">
-                        <strong>Needs knowledge of several technical domains</strong>
-                        <span>Multiplies technical difficulty (Medium Impact)</span>
+                <div class="input-group">
+                    <label>Needs knowledge of several technical domains</label>
+                    <div class="segmented-control">
+                        <input type="radio" id="techdom-easy" name="multiple-tech" value="1.0" checked>
+                        <label for="techdom-easy">Easy</label>
+                        
+                        <input type="radio" id="techdom-medium" name="multiple-tech" value="1.30">
+                        <label for="techdom-medium">Medium</label>
+                        
+                        <input type="radio" id="techdom-hard" name="multiple-tech" value="1.60">
+                        <label for="techdom-hard">Hard</label>
                     </div>
-                </label>
+                    <p class="helper-text">Multiplies technical difficulty.</p>
+                </div>
 
-                <label class="checkbox-container">
-                    <input type="checkbox" id="multiple-bus">
-                    <span class="checkmark"></span>
-                    <div class="label-text">
-                        <strong>Needs knowledge of several business domains</strong>
-                        <span>Multiplies procedural difficulty (High Impact)</span>
+                <div class="input-group">
+                    <label>Needs knowledge of several business domains</label>
+                    <div class="segmented-control">
+                        <input type="radio" id="busdom-easy" name="multiple-bus" value="1.0" checked>
+                        <label for="busdom-easy">Easy</label>
+                        
+                        <input type="radio" id="busdom-medium" name="multiple-bus" value="1.50">
+                        <label for="busdom-medium">Medium</label>
+                        
+                        <input type="radio" id="busdom-hard" name="multiple-bus" value="2.0">
+                        <label for="busdom-hard">Hard</label>
                     </div>
-                </label>
+                    <p class="helper-text">Multiplies procedural difficulty.</p>
+                </div>
             </section>
         </form>
 

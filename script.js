@@ -3,46 +3,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const techDiffRadios = document.getElementsByName("tech-diff");
     const procDiffRadios = document.getElementsByName("proc-diff");
 
-    const needsDeploymentCb = document.getElementById("needs-deployment");
-    const dependentModulesCb = document.getElementById("dependent-modules");
-    const needsTestsCb = document.getElementById("needs-tests");
-    const multipleTechCb = document.getElementById("multiple-tech");
-    const multipleBusCb = document.getElementById("multiple-bus");
+    const needsDeploymentRadios = document.getElementsByName("needs-deployment");
+    const dependentModulesRadios = document.getElementsByName("dependent-modules");
+    const needsTestsRadios = document.getElementsByName("needs-tests");
+    const multipleTechRadios = document.getElementsByName("multiple-tech");
+    const multipleBusRadios = document.getElementsByName("multiple-bus");
 
     const resultPointsEl = document.getElementById("result-points");
     const form = document.getElementById("estimator-form");
 
-    // Constants for Scoring
-    const MULTI_TECH_TESTS = 1.15; // Low impact
-    const MULTI_TECH_DOMAINS = 1.30; // Medium impact
-    const MULTI_BUS_DOMAINS = 1.50; // High impact
-    const MULTI_DEPENDENT = 1.15; // Low impact
-    const ADD_DEPLOYMENT = 1; // Low impact
-
-    function getRadioValue(radios) {
+    function getRadioValue(radios, defaultValue = 2) {
         for (const radio of radios) {
             if (radio.checked) {
-                return parseInt(radio.value, 10);
+                return parseFloat(radio.value);
             }
         }
-        return 2; // default fallback
+        return defaultValue;
     }
 
     function calculateStoryPoints() {
-        // Base values (2 = Easy, 5 = Medium, 10 = Hard)
-        const techDiff = getRadioValue(techDiffRadios);
-        const procDiff = getRadioValue(procDiffRadios);
+        // Base values
+        const techDiff = getRadioValue(techDiffRadios, 2);
+        const procDiff = getRadioValue(procDiffRadios, 2);
 
         // Modifiers
-        const needsDeployment = needsDeploymentCb.checked;
-        const dependentModules = dependentModulesCb.checked;
-        const needsTests = needsTestsCb.checked;
-        const multipleTech = multipleTechCb.checked;
-        const multipleBus = multipleBusCb.checked;
+        const needsDeployment = getRadioValue(needsDeploymentRadios, 0);
+        const dependentModules = getRadioValue(dependentModulesRadios, 1.0);
+        const needsTests = getRadioValue(needsTestsRadios, 1.0);
+        const multipleTech = getRadioValue(multipleTechRadios, 1.0);
+        const multipleBus = getRadioValue(multipleBusRadios, 1.0);
 
         // Apply Multipliers
-        const techMult = (needsTests ? MULTI_TECH_TESTS : 1) * (multipleTech ? MULTI_TECH_DOMAINS : 1);
-        const procMult = (multipleBus ? MULTI_BUS_DOMAINS : 1);
+        const techMult = needsTests * multipleTech;
+        const procMult = multipleBus;
 
         const adjustedTech = techDiff * techMult;
         const adjustedProc = procDiff * procMult;
@@ -51,13 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let totalDifficulty = adjustedTech + adjustedProc;
 
         // Overall Modifiers
-        if (dependentModules) {
-            totalDifficulty *= MULTI_DEPENDENT;
-        }
-
-        if (needsDeployment) {
-            totalDifficulty += ADD_DEPLOYMENT;
-        }
+        totalDifficulty *= dependentModules;
+        totalDifficulty += needsDeployment;
 
         let score = totalDifficulty;
         let storyPoints = 1;
@@ -72,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         else storyPoints = 21;
 
         // Rule: user task that has at least one variable that increases difficulty cannot be evaluated as 1.
-        const hasIncreasingVariable = needsDeployment || dependentModules || needsTests || multipleTech || multipleBus;
+        const hasIncreasingVariable = needsDeployment > 0 || dependentModules > 1.0 || needsTests > 1.0 || multipleTech > 1.0 || multipleBus > 1.0;
         if (hasIncreasingVariable && storyPoints === 1) {
             storyPoints = 2; // Bump up to 2
         }
